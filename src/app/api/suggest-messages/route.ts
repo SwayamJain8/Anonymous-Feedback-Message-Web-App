@@ -1,4 +1,4 @@
-// Need to change the code in this file because of the new update.
+// Need to change the code in this file because of the new update and all this is now depricated.
 
 import OpenAI from "openai";
 import { OpenAIStream, StreamingTextResponse } from "ai";
