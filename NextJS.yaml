@@ -1,0 +1,32 @@
+Next-JS (with TypeScript)
+
+=> Next-JS (main)
+=> MongoDB (for database) ---------------------------- //.env -> MONGODB_URI
+=> Zod (for validation)
+=> Resend (for sending emails) ----------------------- //.env -> RESEND_API_KEY
+=> React Email -> @react-email/components (for creating email templates)
+=> BcryptJS (for hashing passwords)
+=> Auth.js / NextAuth.js (for authentication) -------- //.env -> NEXTAUTH_SECRET
+=> Vercel AI (for suggesting messages through AI) ---- //.env -> OPENAI_API_KEY
+
+-->  Create a next app
+-->  Create src/model/ (files for creating schemas/models for MongoDB)
+-->  Create src/schemas/ (files for creating schemas/models using Zod for validation)
+-->  Create src/lib/dbConnect.ts (for connecting to database if the connection is not already established)
+-->  Create src/lib/resend.ts (for creating a new instance of Resend)
+-->  Create emails/VerificationEmail.tsx (for creating the email template)
+-->  Create src/types/ApiResponse (for defining the structure of response from the API)
+-->  Create src/helpers/sendVerificationEmail.ts (for sending verification email)
+-->  Create src/app/api/sign-up/route.ts (for handling the sign-up route)
+--> Create src/app/api/auth/[...nextauth]/options.ts (for defining the authOptions for NextAuth)
+--> Create src/types/next-auth.d.ts (for declaring /modifying the types for NextAuth)
+--> Create src/app/api/auth/[...nextauth]/routes.ts (for defining handler method for NextAuth routes)
+--> Create src/middleware.ts (for defining the middleware for NextAuth)
+--> Create src/app/(auth)/sign-in/page.tsx (for creating the sign-in page)
+--> Create src/context/AuthProvider.tsx (for creating the AuthProvider context to wrap the children components with SessionProvider)
+--> Create src/app/api/check-username-unique/route.ts (for checking if the username is unique or not)
+--> Create src/app/api/verify-code/route.ts (for verifying the code sent to the user's email)
+--> Create src/app/api/accept-messages/route.ts (for knowing or updating the user's status of accepting messages)
+--> Create src/app/api/get-messages/route.ts (for getting all the messages of the user)
+--> Create src/app/api/send-message/route.ts (for sending a message to the user)
+--> Create src/app/api/suggest-messages/route.ts (for suggesting messages through AI to the user) (SELF-WORK through DOCS)
