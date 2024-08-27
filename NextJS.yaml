@@ -8,6 +8,9 @@ Next-JS (with TypeScript)
 => BcryptJS (for hashing passwords)
 => Auth.js / NextAuth.js (for authentication) -------- //.env -> NEXTAUTH_SECRET
 => Vercel AI (for suggesting messages through AI) ---- //.env -> OPENAI_API_KEY
+=> Shadcn (for UI components(download it according to use))
+----> After installing shadcn some files will be automatically created in the project
+----> Form of shadcn also uses react-hook-form
 
 -->  Create a next app
 -->  Create src/model/ (files for creating schemas/models for MongoDB)
@@ -22,7 +25,6 @@ Next-JS (with TypeScript)
 --> Create src/types/next-auth.d.ts (for declaring /modifying the types for NextAuth)
 --> Create src/app/api/auth/[...nextauth]/routes.ts (for defining handler method for NextAuth routes)
 --> Create src/middleware.ts (for defining the middleware for NextAuth)
---> Create src/app/(auth)/sign-in/page.tsx (for creating the sign-in page)
 --> Create src/context/AuthProvider.tsx (for creating the AuthProvider context to wrap the children components with SessionProvider)
 --> Create src/app/api/check-username-unique/route.ts (for checking if the username is unique or not)
 --> Create src/app/api/verify-code/route.ts (for verifying the code sent to the user's email)
@@ -30,3 +32,4 @@ Next-JS (with TypeScript)
 --> Create src/app/api/get-messages/route.ts (for getting all the messages of the user)
 --> Create src/app/api/send-message/route.ts (for sending a message to the user)
 --> Create src/app/api/suggest-messages/route.ts (for suggesting messages through AI to the user) (SELF-WORK through DOCS)
+--> Create src/app/(auth)/sign-up/page.tsx (for creating the sign-up page)

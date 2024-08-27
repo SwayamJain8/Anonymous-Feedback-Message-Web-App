@@ -1,17 +1,30 @@
+// "use client" is a special comment that tells the bundler to use the client bundle instead of the server bundle for the following imports in the same file. This is useful for importing client-side only packages like react, react-dom, and next/link in a file that is shared between the client and server bundles. This comment is only needed in files that are shared between the client and server bundles. Files that are only imported in the client bundle do not need this comment. Files that are only imported in the server bundle should not use this comment.
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+
 import { useForm } from "react-hook-form";
+
 import * as z from "zod";
+
 import Link from "next/link";
+
 import { useEffect, useState } from "react";
+
 import { useDebounceValue, useDebounceCallback } from "usehooks-ts";
+
 import { useToast } from "@/components/ui/use-toast";
+
 import { useRouter } from "next/navigation";
+
 import { signUpSchema } from "@/schemas/signUpSchema";
+
 import axios, { AxiosError } from "axios";
+
 import { ApiResponse } from "@/types/ApiResponse";
+
 import { set } from "mongoose";
+
 import {
   Form,
   FormControl,
