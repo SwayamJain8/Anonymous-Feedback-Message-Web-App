@@ -49,7 +49,7 @@ export async function POST(request: Request) {
     const updatedUser = await UserModel.findByIdAndUpdate(
       userId,
       {
-        isAcceptingMessage: acceptMessages,
+        isAcceptingMessages: acceptMessages,
       },
       {
         new: true,
@@ -119,13 +119,13 @@ export async function GET(request: Request) {
     );
   }
 
-  // If the user is available, get the user id
-  const userId = user._id;
+  // // If the user is available, get the user id
+  // const userId = user._id;
 
   // Try to get the user status to accept messages from the database
   try {
     // Find the user by the user id
-    const foundUser = await UserModel.findById(userId);
+    const foundUser = await UserModel.findById(user._id);
 
     // If the user is not found, return a response with a message that the user is not found
     if (!foundUser) {
@@ -144,7 +144,7 @@ export async function GET(request: Request) {
     return Response.json(
       {
         success: true,
-        isAccceptingMessages: foundUser.isAcceptingMessage,
+        isAcceptingMessages: foundUser.isAcceptingMessages,
       },
       {
         status: 200,

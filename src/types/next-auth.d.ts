@@ -10,7 +10,7 @@ declare module "next-auth" {
   interface User {
     _id?: string;
     isVerified?: boolean;
-    isAcceptingMessage?: boolean;
+    isAcceptingMessages?: boolean;
     username?: string;
   }
   // Little bit of modifying the user of the Session of next-auth according to our User model / needs
@@ -18,7 +18,7 @@ declare module "next-auth" {
     user: {
       _id?: string;
       isVerified?: boolean;
-      isAcceptingMessage?: boolean;
+      isAcceptingMessages?: boolean;
       username?: string;
     } & DefaultSession["user"]; // DefaultSession has user as a default key, to avoid errors
   }
@@ -29,7 +29,7 @@ declare module "next-auth/jwt" {
   interface JWT {
     _id?: string;
     isVerified?: boolean;
-    isAcceptingMessage?: boolean;
+    isAcceptingMessages?: boolean;
     username?: string;
   }
 }

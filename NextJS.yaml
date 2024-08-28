@@ -37,3 +37,4 @@ Next-JS (with TypeScript)
 --> Create src/app/api/suggest-messages/route.ts (for suggesting messages through AI to the user) (SELF-WORK through DOCS)
 --> Create src/app/(auth)/sign-up/page.tsx (for creating the sign-up page)
 ----> The toaster which we downloaded from shadcn use it in src/app/layout.tsx for showing toasts
+--> Create src/app/(auth)/verify/[username]/page.tsx (page for verifying the code sent to the user's email)

@@ -77,9 +77,9 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       // If the user is found, set the token with the user data to store in the JWT token and return the token so that it can be stored in the session
       if (user) {
-        token._id = user._id?.toString();
+        token._id = user._id?.toString(); // Convert ObjectId to string
         token.isVerified = user.isVerified;
-        token.isAcceptingMessage = user.isAcceptingMessage;
+        token.isAcceptingMessages = user.isAcceptingMessages;
         token.username = user.username;
       }
       return token;
@@ -90,7 +90,7 @@ export const authOptions: NextAuthOptions = {
       if (token) {
         session.user._id = token._id;
         session.user.isVerified = token.isVerified;
-        session.user.isAcceptingMessage = token.isAcceptingMessage;
+        session.user.isAcceptingMessages = token.isAcceptingMessages;
         session.user.username = token.username;
       }
       return session;

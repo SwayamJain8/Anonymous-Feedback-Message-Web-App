@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 // Importing the AuthProvider for wrapping the children components with SessionProvider.
 import AuthProvider from "@/context/AuthProvider";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 

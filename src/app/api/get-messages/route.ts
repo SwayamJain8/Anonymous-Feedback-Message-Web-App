@@ -24,6 +24,8 @@ export async function GET(request: Request) {
   // Get the current user session
   const session = await getServerSession(authOptions);
 
+  // console.log(session);
+
   // Get the user from the session object
   const user: User = session?.user as User;
 
