@@ -11,6 +11,8 @@ Next-JS (with TypeScript)
 => Shadcn (for UI components(download it according to use))
 ----> After installing shadcn some files will be automatically created in the project
 ----> Form of shadcn also uses react-hook-form
+=> Usehooks-ts (for using useDebounce hook)
+
 
 -->  Create a next app
 -->  Create src/model/ (files for creating schemas/models for MongoDB)
@@ -26,6 +28,7 @@ Next-JS (with TypeScript)
 --> Create src/app/api/auth/[...nextauth]/routes.ts (for defining handler method for NextAuth routes)
 --> Create src/middleware.ts (for defining the middleware for NextAuth)
 --> Create src/context/AuthProvider.tsx (for creating the AuthProvider context to wrap the children components with SessionProvider)
+----> Use this AuthProvider in src/app/layout.tsx for wrapping the whole body with it
 --> Create src/app/api/check-username-unique/route.ts (for checking if the username is unique or not)
 --> Create src/app/api/verify-code/route.ts (for verifying the code sent to the user's email)
 --> Create src/app/api/accept-messages/route.ts (for knowing or updating the user's status of accepting messages)
@@ -33,3 +36,4 @@ Next-JS (with TypeScript)
 --> Create src/app/api/send-message/route.ts (for sending a message to the user)
 --> Create src/app/api/suggest-messages/route.ts (for suggesting messages through AI to the user) (SELF-WORK through DOCS)
 --> Create src/app/(auth)/sign-up/page.tsx (for creating the sign-up page)
+----> The toaster which we downloaded from shadcn use it in src/app/layout.tsx for showing toasts

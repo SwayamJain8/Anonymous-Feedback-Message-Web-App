@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+
+// Importing the Toaster component from the shadcn components library for showing toasts.
 import { Toaster } from "@/components/ui/toaster";
 
 // Importing the AuthProvider for wrapping the children components with SessionProvider.
@@ -24,6 +26,7 @@ export default function RootLayout({
       <AuthProvider>
         <body className={inter.className}>
           {children}
+          {/* Rendering the Toaster component inside body for showing toasts. */}
           <Toaster />
         </body>
       </AuthProvider>
