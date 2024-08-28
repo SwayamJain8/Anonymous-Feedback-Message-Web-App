@@ -26,6 +26,7 @@ export default function RootLayout({
       {/* Wrapping the whole body as children with AuthProvider. */}
       <AuthProvider>
         <body className={inter.className}>
+          {/* <Navbar /> */}
           {children}
           {/* Rendering the Toaster component inside body for showing toasts. */}
           <Toaster />
