@@ -38,3 +38,8 @@ Next-JS (with TypeScript)
 --> Create src/app/(auth)/sign-up/page.tsx (for creating the sign-up page)
 ----> The toaster which we downloaded from shadcn use it in src/app/layout.tsx for showing toasts
 --> Create src/app/(auth)/verify/[username]/page.tsx (page for verifying the code sent to the user's email)
+
+
+
+// Send Message Ki API Handle Karni
+// Suggest Messages Ki AI Wali API Handle Karni
