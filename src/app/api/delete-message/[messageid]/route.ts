@@ -3,6 +3,7 @@ import { authOptions } from "../../auth/[...nextauth]/options";
 import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/User";
 import { User } from "next-auth";
+import mongoose from "mongoose";
 
 export async function DELETE(
   request: Request,
@@ -13,7 +14,10 @@ export async function DELETE(
   await dbConnect();
 
   const session = await getServerSession(authOptions);
-  const user: User = session?.user as User;
+  const _user: User = session?.user as User;
+
+  // const objectUserId = new mongoose.Types.ObjectId(_user._id);
+  // const objectMessageId = new mongoose.Types.ObjectId(messageId);
 
   if (!session || !session.user) {
     return Response.json(
@@ -29,7 +33,7 @@ export async function DELETE(
 
   try {
     const updateResult = await UserModel.updateOne(
-      { _id: user.id },
+      { _id: _user._id },
       { $pull: { messages: { _id: messageId } } }
     );
 
@@ -37,7 +41,7 @@ export async function DELETE(
       return Response.json(
         {
           success: false,
-          message: "Message not found",
+          message: "User / Message not found",
         },
         {
           status: 404,

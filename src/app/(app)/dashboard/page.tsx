@@ -30,7 +30,7 @@ const page = () => {
   const { toast } = useToast();
 
   const handleDeleteMessage = (messageId: string) => {
-    setMessages(messages.filter((message) => message.id !== messageId));
+    setMessages(messages.filter((message) => message._id !== messageId));
   };
 
   const { data: session } = useSession();
@@ -48,7 +48,6 @@ const page = () => {
     setIsSwitchLoading(true);
     try {
       const response = await axios.get<ApiResponse>("/api/accept-messages");
-      // console.log(response.data.isAcceptingMessages);
       setValue("acceptMessages", response.data.isAcceptingMessages);
     } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>;
@@ -70,7 +69,6 @@ const page = () => {
       setIsSwitchLoading(false);
       try {
         const response = await axios.get<ApiResponse>("/api/get-messages");
-        console.log(response.data);
         setMessages(response.data.messages || []);
         if (refresh) {
           toast({
@@ -83,8 +81,7 @@ const page = () => {
         toast({
           title: "Error",
           description:
-            // axiosError.response?.data.message ||
-            "Failed to fetch messages",
+            axiosError.response?.data.message || "Failed to fetch messages",
           variant: "destructive",
         });
       } finally {

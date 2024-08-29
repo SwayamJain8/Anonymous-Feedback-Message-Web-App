@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     }
 
     // If the user is found but is not accepting messages, return a forbidden response
-    if (!user.isAcceptingMessage) {
+    if (!user.isAcceptingMessages) {
       return Response.json(
         {
           success: false,
