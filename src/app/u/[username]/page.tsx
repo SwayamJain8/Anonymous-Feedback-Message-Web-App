@@ -40,12 +40,13 @@ export default function SendMessage() {
 
   const {
     complete,
-    completion,
+    completion, // completion me kis type ka data aayega? -> string aayega jo ki messageString hoga
     isLoading: isSuggestLoading,
     error,
   } = useCompletion({
     api: "/api/suggest-messages",
     initialCompletion: initialMessageString,
+    streamProtocol: "text",
   });
 
   const form = useForm<z.infer<typeof messageSchema>>({
@@ -149,9 +150,10 @@ export default function SendMessage() {
           <CardHeader>
             <h3 className="text-xl font-semibold">Messages</h3>
           </CardHeader>
+
           <CardContent className="flex flex-col space-y-4">
             {error ? (
-              <p className="text-red-500">{error.message}</p>
+              <p className="text-red-500">{error.stack}</p>
             ) : (
               parseStringMessages(completion).map((message, index) => (
                 <Button
@@ -160,7 +162,7 @@ export default function SendMessage() {
                   className="mb-2"
                   onClick={() => handleMessageClick(message)}
                 >
-                  {message}
+                  {message.replace(/("|\\n)/g, "")}
                 </Button>
               ))
             )}
