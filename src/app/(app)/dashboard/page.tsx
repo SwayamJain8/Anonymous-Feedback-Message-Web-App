@@ -18,7 +18,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-const page = () => {
+const Page = () => {
   const [messages, setMessages] = useState<Message[]>([]);
 
   // setIsLoading is used to show loading spinner when fetching messages
@@ -197,4 +197,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
