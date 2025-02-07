@@ -55,7 +55,7 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 
 // Defining the page component for the sign up page with the form to sign up a user
-const page = () => {
+const Page = () => {
   // Defining the username state variable for the username input field
   const [username, setUsername] = useState("");
 
@@ -273,4 +273,4 @@ const page = () => {
 };
 
 // Exporting the page component
-export default page;
+export default Page;
